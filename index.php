@@ -83,7 +83,7 @@
 		</div>
 	</div>
 	<!-- Modal -->
-	<div id="editaCliente" class="modal fade" role="dialog">
+	<div id="editaCliente" class="modal fade" role="dialog" static>
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
