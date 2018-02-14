@@ -10,11 +10,11 @@ function exibir(status){
 		div.style.display = 'none';
 	}
 }
-function editaCliente(element){
+function buscaCliente(element){
 	// $(document).ready(function(){
  //    $("#submit").on('click', function(){
         $.ajax({
-            url: 'editar.php', 
+            url: 'busca.php', 
             type : "POST", 
             data : {id: element.value}, 
             success : function(dados) {
@@ -25,7 +25,11 @@ function editaCliente(element){
             		"<label style='color:steelblue;'>Nome:&nbsp;&nbsp;</label><input type=text name=nome value="+obj['nome']+"><br><br>"+
             		"<label style='color:steelblue;'>Email:&nbsp;&nbsp;</label><input type=email name=email value="+obj['email']+">"+
             		"</form>");
-                
+                $("#consulta_deleta").html("<form>"+
+            		"<label style='margin-left: 25px;color:steelblue;'>Id:&nbsp;&nbsp;</label><input style='width: 100px;' type=text name=id value="+obj['id']+" readonly><br><br>"+
+            		"<label style='color:steelblue;'>Nome:&nbsp;&nbsp;</label><input type=text name=nome value="+obj['nome']+"><br><br>"+
+            		"<label style='color:steelblue;'>Email:&nbsp;&nbsp;</label><input type=email name=email value="+obj['email']+">"+
+            		"</form>");
             },
             error: function() {
                 console.log("A requisição AJAX falhou!");

@@ -70,8 +70,8 @@
 	        					echo "<td>".$row['email']."</td>";
 	        					echo "<td>";
 	        					echo "<center>";
-			        			echo "<button class='btn btn-primary' id='btn-editar' value=".$row['id']." data-toggle='modal' data-target='#editaCliente' onClick='editaCliente(this);'><i class='far fa-edit'></i>&nbsp;Editar</button>&nbsp;&nbsp;&nbsp;&nbsp;";
-			        			echo "<button class='btn btn-danger' data-toggle='modal' data-target='#deletaCliente' onClick='deletaCliente(this);' value=".$row['id']."><i class='fas fa-times'></i>&nbsp;Deletar</button>";
+			        			echo "<button class='btn btn-primary' id='btn-editar' value=".$row['id']." data-toggle='modal' data-target='#editaCliente' onClick='buscaCliente(this);'><i class='far fa-edit'></i>&nbsp;Editar</button>&nbsp;&nbsp;&nbsp;&nbsp;";
+			        			echo "<button class='btn btn-danger' data-toggle='modal' data-target='#deletaCliente' onClick='buscaCliente(this);' value=".$row['id']."><i class='fas fa-times'></i>&nbsp;Deletar</button>";
 			        			echo "</center>";
 		        			echo "</td>";
         					echo "</tr>";
@@ -82,7 +82,7 @@
 			
 		</div>
 	</div>
-	<!-- Modal -->
+	<!-- Modal Edita Cliente-->
 	<div id="editaCliente" class="modal fade" role="dialog" static>
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -95,6 +95,26 @@
 	      </div>
 	      <div class="modal-footer">
 	      	<input class="btn btn-primary" type="submit" name="enviar" value="Salvar">
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
+<!-- Modal Deleta Cliente-->
+	<div id="deletaCliente" class="modal fade" role="dialog" static>
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Excluir Cliente</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<h5>Você deseja realmente excluir este cliente?</h5>
+	      	<div id="consulta_deleta"></div>
+	      </div>
+	      <div class="modal-footer">
+	      	<input class="btn btn-primary" type="submit" name="enviar" value="Confirmar">
 	      </div>
 	    </div>
 
